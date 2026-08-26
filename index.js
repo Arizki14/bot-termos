@@ -314,7 +314,7 @@ async function startRizzBot() {
 				try {
 					console.log("Requesting Pairing Code...");
 					const randomPart = Math.random().toString(36).substring(2, 6).toUpperCase();
-					let code = await sock.requestPairingCode(phoneNumber, "Rizz" + randomPart);
+					let code = await sock.requestPairingCode(phoneNumber, "RIZZ" + randomPart);
 					code = code?.match(/.{1,4}/g)?.join("-") || code;
 					console.log(chalk.blue("Your Pairing Code :"), chalk.green(code), "\n", chalk.yellow("Expires in 15 second"));
 				} catch (err) {
