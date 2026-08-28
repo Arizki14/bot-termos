@@ -1,13 +1,13 @@
 <div align="center">
-  <img src="src/media/hitori.webp" alt="Hitori Goto" width="180" />
-  <h1>Hitori Bot</h1>
+  <img src="src/media/rvo.webp" alt="rvo Goto" width="180" />
+  <h1>rvo Bot</h1>
   <p>A feature-rich WhatsApp bot built with Node.js and <a href="https://github.com/WhiskeySockets/Baileys">Baileys</a>.<br/>
   Comes with an interactive CLI, web dashboard, and a full suite of commands out of the box.</p>
 
-  <a href="https://github.com/nazedev/hitori/stargazers"><img src="https://img.shields.io/github/stars/nazedev/hitori?style=flat-square&color=yellow" alt="Stars" /></a>
-  <a href="https://github.com/nazedev/hitori/network/members"><img src="https://img.shields.io/github/forks/nazedev/hitori?style=flat-square&color=blue" alt="Forks" /></a>
-  <a href="https://github.com/nazedev/hitori/issues"><img src="https://img.shields.io/github/issues/nazedev/hitori?style=flat-square&color=green" alt="Issues" /></a>
-  <a href="https://github.com/nazedev/hitori/pulls"><img src="https://img.shields.io/github/issues-pr/nazedev/hitori?style=flat-square&color=orange" alt="Pull Requests" /></a>
+  <a href="https://github.com/nazedev/rvo/stargazers"><img src="https://img.shields.io/github/stars/nazedev/rvo?style=flat-square&color=yellow" alt="Stars" /></a>
+  <a href="https://github.com/nazedev/rvo/network/members"><img src="https://img.shields.io/github/forks/nazedev/rvo?style=flat-square&color=blue" alt="Forks" /></a>
+  <a href="https://github.com/nazedev/rvo/issues"><img src="https://img.shields.io/github/issues/nazedev/rvo?style=flat-square&color=green" alt="Issues" /></a>
+  <a href="https://github.com/nazedev/rvo/pulls"><img src="https://img.shields.io/github/issues-pr/nazedev/rvo?style=flat-square&color=orange" alt="Pull Requests" /></a>
 </div>
 
 <br />
@@ -16,7 +16,7 @@
 > **UNOFFICIAL API & ACCOUNT SANCTIONS RISK (DISCLAIMER)**  
 > This project uses `@whiskeysockets/baileys`, an unofficial WhatsApp Web API. Automated bots and unofficial third-party clients violate **WhatsApp's Terms of Service**.  
 > - **Account Sanctions & Restrictions:** Your WhatsApp account/number may face **sanctions, feature restrictions, or bans (temporary/permanent)** by Meta's automated anti-spam systems.  
-> - **Zero Liability:** The author and maintainers of **Hitori Bot (`Nazedev`)** assume **no liability or responsibility** for any account sanctions, banned numbers, data loss, or damages resulting from the use of this software. **USE AT YOUR OWN RISK.**
+> - **Zero Liability:** The author and maintainers of **rvo Bot (`Nazedev`)** assume **no liability or responsibility** for any account sanctions, banned numbers, data loss, or damages resulting from the use of this software. **USE AT YOUR OWN RISK.**
 
 > [!WARNING]
 > **COMMON CAUSES OF WHATSAPP BANS:**  
@@ -68,8 +68,8 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/nazedev/hitori
-cd hitori
+git clone https://github.com/nazedev/rvo
+cd rvo
 ```
 
 ### 2. Automatic setup (recommended)
@@ -88,11 +88,11 @@ Both scripts will:
 - Detect your package manager and install system dependencies
 - Install PM2 globally for process management
 - Run `npm install` to set up Node.js packages
-- Register the global `hitori` command via `npm link`
+- Register the global `rvo` command via `npm link`
 - Launch the first-time setup wizard automatically
 
 > [!IMPORTANT]
-> After running the install script, the `hitori` command becomes available globally.
+> After running the install script, the `rvo` command becomes available globally.
 > You can run it from any directory — no need to `cd` into the project folder each time.
 
 ---
@@ -104,8 +104,8 @@ Both scripts will:
 ```bash
 pkg update && pkg upgrade
 pkg install git nodejs ffmpeg yarn
-git clone https://github.com/nazedev/hitori
-cd hitori
+git clone https://github.com/nazedev/rvo
+cd rvo
 yarn install
 ```
 
@@ -133,23 +133,23 @@ npm start
 
 ## CLI Interface
 
-Hitori includes a full interactive CLI tool for managing the bot without editing files manually.
+rvo includes a full interactive CLI tool for managing the bot without editing files manually.
 
 ### Usage
 
 ```
-hitori                    Open the interactive main menu
-hitori start              Start the bot directly
-hitori settings           Open the settings manager
-hitori status             Show system health dashboard
-hitori report             View logs and diagnostics
-hitori --setup            Run the first-time setup wizard
-hitori --help, -h         Show help
+rvo                    Open the interactive main menu
+rvo start              Start the bot directly
+rvo settings           Open the settings manager
+rvo status             Show system health dashboard
+rvo report             View logs and diagnostics
+rvo --setup            Run the first-time setup wizard
+rvo --help, -h         Show help
 ```
 
 ### Interactive Main Menu
 
-Running `hitori` without arguments opens the main menu with the following options:
+Running `rvo` without arguments opens the main menu with the following options:
 
 | Option | Description |
 |--------|-------------|
@@ -170,8 +170,8 @@ On first run, the CLI automatically launches a guided setup wizard that walks yo
 - **Bot WhatsApp number** — used for pairing code
 
 > [!NOTE]
-> You can re-run the setup wizard at any time with `hitori --setup`.
-> All values can also be changed individually via `hitori settings`.
+> You can re-run the setup wizard at any time with `rvo --setup`.
+> All values can also be changed individually via `rvo settings`.
 
 ### Settings Manager
 
@@ -188,7 +188,7 @@ All changes are written directly to `settings.js` and take effect immediately (h
 
 ### Status Dashboard
 
-The `hitori status` command displays a health overview:
+The `rvo status` command displays a health overview:
 
 - **System dependencies** — Node.js, npm, FFmpeg, PM2, Git (with version checks)
 - **Bot process** — PM2 status, uptime, memory usage, CPU, restart count
@@ -197,7 +197,7 @@ The `hitori status` command displays a health overview:
 
 ### Report Viewer
 
-The `hitori report` command provides access to diagnostics:
+The `rvo report` command provides access to diagnostics:
 
 | Report | Description |
 |--------|-------------|
@@ -214,7 +214,7 @@ There are several ways to start the bot:
 
 ```bash
 # Via the CLI (recommended)
-hitori start
+rvo start
 
 # Via npm
 npm start
@@ -230,13 +230,13 @@ Once started, scan the QR code or use the pairing code to connect your WhatsApp 
 
 > [!CAUTION]
 > The bot will auto-restart on crashes when started through `start.js`.
-> If the bot keeps crashing in a loop, check your logs with `hitori report` to diagnose the issue.
+> If the bot keeps crashing in a loop, check your logs with `rvo report` to diagnose the issue.
 
 ---
 
 ## Web Dashboard
 
-Hitori connects to a relay-based web dashboard at `bot.naze.biz.id` via Socket.IO. Once connected, the bot automatically registers itself and provides a dashboard URL in the console output.
+rvo connects to a relay-based web dashboard at `bot.naze.biz.id` via Socket.IO. Once connected, the bot automatically registers itself and provides a dashboard URL in the console output.
 
 The dashboard allows you to:
 - View real-time bot stats (uptime, memory, CPU)
@@ -262,8 +262,8 @@ You can set the API key in two ways:
 
 **Option A — via CLI (recommended):**
 ```bash
-hitori --setup
-# or navigate to: hitori > Settings > API Keys
+rvo --setup
+# or navigate to: rvo > Settings > API Keys
 ```
 
 **Option B — manual edit in `settings.js`:**
@@ -280,7 +280,7 @@ global.APIKeys = {
 
 ### Using the `fetchApi` Helper (GET & POST Methods)
 
-Hitori Bot provides a built-in, globally available helper function—`global.fetchApi(endpoint, data, options)`—defined in `index.js`. This helper automatically handles endpoint resolution, API key injection, header formatting, and JSON parsing according to the official [Naze API Documentation](https://api.naze.biz.id/docs/json).
+rvo Bot provides a built-in, globally available helper function—`global.fetchApi(endpoint, data, options)`—defined in `index.js`. This helper automatically handles endpoint resolution, API key injection, header formatting, and JSON parsing according to the official [Naze API Documentation](https://api.naze.biz.id/docs/json).
 
 #### Function Signature & Parameters
 ```ts
@@ -357,10 +357,10 @@ break;
 
 ## Configuration
 
-All bot settings are managed in [`settings.js`](https://github.com/nazedev/hitori/blob/master/settings.js). Changes are **hot-reloaded** automatically — no restart needed.
+All bot settings are managed in [`settings.js`](https://github.com/nazedev/rvo/blob/master/settings.js). Changes are **hot-reloaded** automatically — no restart needed.
 
 > [!TIP]
-> Use `hitori settings` for a guided, menu-driven way to edit configuration
+> Use `rvo settings` for a guided, menu-driven way to edit configuration
 > instead of modifying `settings.js` by hand.
 
 ### Key options
@@ -372,7 +372,7 @@ global.owner = ["628xxxxxxxxxx"];
 
 **Bot identity**
 ```js
-global.botname = "Hitori Bot";
+global.botname = "rvo Bot";
 global.author = "Nazedev";
 global.packname = "Bot WhatsApp";
 ```
@@ -404,7 +404,7 @@ global.number_bot = "628xxxxxxxxxx";
 
 ## Database & Storage
 
-Hitori Bot features a highly flexible, enterprise-grade database architecture. The system divides data into three distinct layers, each of which can be configured independently to use a different database engine, local filesystem path, or cloud endpoint.
+rvo Bot features a highly flexible, enterprise-grade database architecture. The system divides data into three distinct layers, each of which can be configured independently to use a different database engine, local filesystem path, or cloud endpoint.
 
 ### 1. The Three Data Layers
 - **Session Auth (`global.database.path`)**: Stores cryptographic signal keys, pre-keys, and WhatsApp credentials required to maintain an authenticated connection. This layer writes almost in real-time via an asynchronous FIFO queue (`writeQueue`) backed by an in-memory LRU cache (`keyCache`).
@@ -499,7 +499,7 @@ global.database = {
 		},
 		// Bot Database on a separate MySQL / TiDB Cloud instance
 		database: {
-			path: "mysql://root:password@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/hitori",
+			path: "mysql://root:password@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/rvo",
 			ssl: true
 		}
 	}
@@ -531,7 +531,7 @@ global.database = {
 
 ## Adding Features
 
-All bot commands live in [`handler.js`](https://github.com/nazedev/hitori/blob/master/handler.js), inside the `switch (command)` block.
+All bot commands live in [`handler.js`](https://github.com/nazedev/rvo/blob/master/handler.js), inside the `switch (command)` block.
 
 To add a new command, insert a new `case`:
 
@@ -567,7 +567,7 @@ break
 ## Project Structure
 
 ```
-hitori/
+rvo/
 ├── index.js                  # Core connector and event handler
 ├── handler.js                # All bot commands and features
 ├── settings.js               # Bot configuration (hot-reloaded)
@@ -616,7 +616,7 @@ hitori/
 
 ### Heroku
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nazedev/hitori)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nazedev/rvo)
 
 **Required buildpacks:**
 
@@ -671,10 +671,10 @@ If you find this project useful, consider supporting the development:
 > **PLEASE READ CAREFULLY BEFORE DEPLOYING OR USING THIS SCRIPT**
 
 ### 1. Unofficial API Notice & Legal Disclaimer
-**Hitori Bot** is an independent open-source project built on top of `@whiskeysockets/baileys`, which implements an **unofficial WhatsApp Web Multi-Device protocol**.
+**rvo Bot** is an independent open-source project built on top of `@whiskeysockets/baileys`, which implements an **unofficial WhatsApp Web Multi-Device protocol**.
 - **Not Affiliated with Meta / WhatsApp:** This project is **not** endorsed, certified, or authorized by WhatsApp Inc., Meta Platforms, Inc., or any of their affiliates.
 - **Terms of Service Violation:** Using third-party clients, automation scripts, or bots is a violation of WhatsApp's Terms of Service.
-- **Zero Liability Clause:** By downloading, installing, or running **Hitori Bot**, **you explicitly acknowledge and accept all risks**. The creator (`Nazedev`), contributors, and maintainers **SHALL NOT BE HELD LIABLE OR RESPONSIBLE** for:
+- **Zero Liability Clause:** By downloading, installing, or running **rvo Bot**, **you explicitly acknowledge and accept all risks**. The creator (`Nazedev`), contributors, and maintainers **SHALL NOT BE HELD LIABLE OR RESPONSIBLE** for:
   - Any **temporarily or permanently banned WhatsApp numbers/accounts**.
   - Any loss of personal or business messages, contacts, or data.
   - Any damages, complaints, or legal actions arising from automated messaging.
