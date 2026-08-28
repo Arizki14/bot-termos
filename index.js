@@ -58,7 +58,7 @@ global.fetchApi = async (endpoint = "/", data = {}, options = {}) => {
 				}
 			}
 			const apiName = typeof options.api === "number" ? apiList[options.api - 1] : options.name;
-			const base = apiName ? global.APIs[apiName] || apiName : global.APIs.Rizz;
+			const base = apiName ? global.APIs[apiName] || apiName : global.APIs.naze;
 			const apikey = global.APIKeys[base] || "";
 			let method = (options.method || "GET").toUpperCase();
 			let url = base + endpoint;
@@ -130,13 +130,13 @@ global.fetchApi = async (endpoint = "/", data = {}, options = {}) => {
 	});
 };
 
-let mainPath = global.database.path || global.database.url || "Rizzdev";
+let mainPath = global.database.path || global.database.url || "nazedev";
 const isUrl = /^(mongodb|mysql|postgres|postgresql)(\+srv)?:\/\//i.test(mainPath);
 if (!isUrl) {
 	const forbiddenPaths = ["temp", "clonebot", "backup", "node_modules"];
 	if (forbiddenPaths.includes(mainPath.trim().toLowerCase())) {
-		console.log(chalk.redBright(`[WARNING] The database folder name "${mainPath}" is reserved by the system. Reverting to default directory ("Rizzdev") to prevent data loss.`));
-		mainPath = "Rizzdev";
+		console.log(chalk.redBright(`[WARNING] The database folder name "${mainPath}" is reserved by the system. Reverting to default directory ("nazedev") to prevent data loss.`));
+		mainPath = "nazedev";
 	}
 }
 const options = global.database.options || {};
@@ -174,7 +174,7 @@ logSuccess("All external dependencies are satisfied");
 
 showBanner();
 
-async function startRizzBot() {
+async function startNazeBot() {
 	try {
 		const loadData = await database.read();
 		const storeLoadData = await storeDB.read();
@@ -250,8 +250,8 @@ async function startRizzBot() {
 
 	const level = pino({ level: "silent" });
 	const { version } = await fetchLatestWaWebVersion();
-	if (pairingCode && !phoneNumber && !fs.existsSync("./Rizzdev/creds.json")) {
-		fs.rmSync("./Rizzdev", { recursive: true, force: true });
+	if (pairingCode && !phoneNumber && !fs.existsSync("./nazedev/creds.json")) {
+		fs.rmSync("./nazedev", { recursive: true, force: true });
 		async function getPhoneNumber() {
 			phoneNumber = global.number_bot ? global.number_bot : process.env.BOT_NUMBER || (await question("Please type your WhatsApp number : "));
 			phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
@@ -270,7 +270,7 @@ async function startRizzBot() {
 			return msg?.message || "";
 		}
 		return {
-			conversation: "Halo Saya Rizz Bot",
+			conversation: "Halo Saya Naze Bot",
 		};
 	};
 
@@ -314,7 +314,7 @@ async function startRizzBot() {
 				try {
 					console.log("Requesting Pairing Code...");
 					const randomPart = Math.random().toString(36).substring(2, 6).toUpperCase();
-					let code = await sock.requestPairingCode(phoneNumber, "RIZZ" + randomPart);
+					let code = await sock.requestPairingCode(phoneNumber, "NAZE" + randomPart);
 					code = code?.match(/.{1,4}/g)?.join("-") || code;
 					console.log(chalk.blue("Your Pairing Code :"), chalk.green(code), "\n", chalk.yellow("Expires in 15 second"));
 				} catch (err) {
@@ -329,7 +329,7 @@ async function startRizzBot() {
 
 			const reconnect = () => {
 				setTimeout(() => {
-					startRizzBot();
+					startNazeBot();
 				}, 3000);
 			};
 
@@ -352,15 +352,15 @@ async function startRizzBot() {
 				console.log("Close current Session first...");
 			} else if (reason === DisconnectReason.loggedOut) {
 				console.log("Scan again and Run...");
-				fs.rmSync("./Rizzdev", { recursive: true, force: true });
+				fs.rmSync("./nazedev", { recursive: true, force: true });
 				process.exit(0);
 			} else if (reason === DisconnectReason.forbidden) {
 				console.log("Connection Failure, Scan again and Run...");
-				fs.rmSync("./Rizzdev", { recursive: true, force: true });
+				fs.rmSync("./nazedev", { recursive: true, force: true });
 				process.exit(1);
 			} else if (reason === DisconnectReason.multideviceMismatch) {
 				console.log("Scan again...");
-				fs.rmSync("./Rizzdev", { recursive: true, force: true });
+				fs.rmSync("./nazedev", { recursive: true, force: true });
 				process.exit(0);
 			} else {
 				sock.end(`Unknown DisconnectReason : ${reason}|${connection}`);
@@ -516,7 +516,7 @@ async function startRizzBot() {
 	return sock;
 }
 
-startRizzBot();
+startNazeBot();
 
 const cleanup = async (signal) => {
 	console.log(chalk.greenBright(`[SYSTEM] Received ${signal}. Menyimpan database...`));
