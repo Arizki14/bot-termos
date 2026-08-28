@@ -13,7 +13,7 @@ export async function runSetupWizard() {
 	showBanner();
 	sectionHeader("First-Time Setup");
 
-	console.log(`  ${theme.dim("Welcome! Let's configure the essentials.")}\n` + `  ${theme.dim("You can change any of these later with")} ${theme.accent("hitori settings")}\n`);
+	console.log(`  ${theme.dim("Welcome! Let's configure the essentials.")}\n` + `  ${theme.dim("You can change any of these later with")} ${theme.accent("rvo settings")}\n`);
 
 	separator();
 
@@ -58,7 +58,7 @@ export async function runSetupWizard() {
 
 	const botName = await input({
 		message: "Bot name:",
-		default: readSetting("botname") || "Hitori Bot",
+		default: readSetting("botname") || "Rvo Bot",
 	});
 
 	separator();
@@ -123,7 +123,7 @@ export async function runSetupWizard() {
 	});
 
 	if (!confirmed) {
-		logWarning("Setup cancelled. You can run it again with: hitori --setup");
+		logWarning("Setup cancelled. You can run it again with: rvo --setup");
 		return false;
 	}
 
@@ -137,10 +137,10 @@ export async function runSetupWizard() {
 
 	logSuccess("Configuration saved to settings.js");
 
-	const markerPath = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..", ".hitori_setup_done");
+	const markerPath = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..", ".rvo_setup_done");
 	fs.writeFileSync(markerPath, "1", "utf-8");
 
-	console.log(`  ${theme.dim("Tip: Use")} ${theme.accent("'hitori start'")} ${theme.dim("command to start the bot anytime.")}\n`);
+	console.log(`  ${theme.dim("Tip: Use")} ${theme.accent("'rvo start'")} ${theme.dim("command to start the bot anytime.")}\n`);
 
 	return true;
 }

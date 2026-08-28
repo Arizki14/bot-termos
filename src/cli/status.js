@@ -41,7 +41,7 @@ function pm2Status() {
 	try {
 		const raw = execSync("pm2 jlist", { stdio: "pipe" }).toString().trim();
 		const list = JSON.parse(raw);
-		const bot = list.find((p) => p.name === "hitori" || p.pm2_env?.pm_exec_path?.includes("start.js"));
+		const bot = list.find((p) => p.name === "rvo" || p.pm2_env?.pm_exec_path?.includes("start.js"));
 		if (bot) {
 			return {
 				running: bot.pm2_env.status === "online",

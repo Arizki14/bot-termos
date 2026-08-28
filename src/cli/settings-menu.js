@@ -69,7 +69,7 @@ async function generalSettings() {
 		sectionHeader("General Settings");
 
 		const fields = [
-			["Bot Name", readSetting("botname") || "Hitori Bot"],
+			["Bot Name", readSetting("botname") || "Rvo Bot"],
 			["Bot Number", readSetting("number_bot") || theme.muted("Not set (Prompt on start)")],
 			["Author", readSetting("author") || "Nazedev"],
 			["Pack Name", readSetting("packname") || "Bot WhatsApp"],
