@@ -10,18 +10,18 @@
   ],
   "author": "Nazedev",
   "license": "MIT",
-  "homepage": "https://github.com/nazedev/hitori#readme",
+  "homepage": "https://github.com/nazedev/rvo#readme",
   "bugs": {
-    "url": "https://github.com/nazedev/hitori/issues"
+    "url": "https://github.com/nazedev/rvo/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nazedev/hitori.git"
+    "url": "git+https://github.com/Arizki14/bot-termos.git"
   },
   "type": "module",
   "main": "start.js",
   "bin": {
-    "hitori": "./cli.js"
+    "rvo": "./cli.js"
   },
   "directories": {
     "lib": "lib",
