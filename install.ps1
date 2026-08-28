@@ -29,18 +29,18 @@ $null = Register-EngineEvent -SourceIdentifier ([System.Management.Automation.Ps
 }
 $null = Register-ObjectEvent -InputObject ([console]) -EventName CancelKeyPress -Action {
     Write-Host "`n`n  $YELLOW$WARN$NC $BOLD Installation cancelled by user.$NC"
-    Write-Host "  $CYAN Thank you for trying out Hitori Bot! Have a great day.$NC`n"
+    Write-Host "  $CYAN Thank you for trying out Rvo Bot! Have a great day.$NC`n"
     try { [Console]::CursorVisible = $true } catch {}
     [Environment]::Exit(130)
 }
 
 Write-Host ""
-Write-Host "  $BOLD Hitori Bot Installation $NC"
+Write-Host "  $BOLD Rvo Bot Installation $NC"
 Write-Host ""
 Write-Host "  $BLUE$INFO$NC $DIM Starting setup process... $NC"
 Write-Host ""
 
-$LOG_FILE = "$env:TEMP\hitori_install.log"
+$LOG_FILE = "$env:TEMP\rvo_install.log"
 if (Test-Path $LOG_FILE) { Remove-Item $LOG_FILE -Force }
 
 function Invoke-WithSpinner {

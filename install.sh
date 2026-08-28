@@ -12,10 +12,10 @@ RED='\033[0;31m'
 GRAY='\033[0;90m'
 NC='\033[0m'
 
-echo -e "\n  ${BOLD}Hitori Bot Installation${NC}\n"
+echo -e "\n  ${BOLD}Rvo Bot Installation${NC}\n"
 echo -e "  ${BLUE}i${NC} ${DIM}Starting setup process...${NC}\n"
 
-LOG_FILE="${TMPDIR:-/tmp}/hitori_install.log"
+LOG_FILE="${TMPDIR:-/tmp}/rvo_install.log"
 
 SPIN_PID=""
 trap 'cleanup' EXIT
@@ -30,7 +30,7 @@ cleanup() {
 
 handle_interrupt() {
     echo -e "\n\n  ${YELLOW}⚠${NC} ${BOLD}Installation cancelled by user.${NC}"
-    echo -e "  ${CYAN}Thank you for trying out Hitori Bot! Have a great day.${NC}\n"
+    echo -e "  ${CYAN}Thank you for trying out Rvo Bot! Have a great day.${NC}\n"
     exit 130
 }
 
@@ -121,8 +121,8 @@ main() {
         echo -e "  This filesystem does not support 'symlinks', which are strictly required by Node.js.\n"
         echo -e "  ${YELLOW}How to fix this:${NC}"
         echo -e "  Please run the command below to PERMANENTLY MOVE the bot to the native Termux environment."
-        echo -e "  (Note: In the future, you must use 'cd ~/hitori-master' to access your bot)\n"
-        echo -e "  ${CYAN}mv \"$PWD\" ~/hitori-master && cd ~/hitori-master && bash install.sh${NC}\n"
+        echo -e "  (Note: In the future, you must use 'cd ~/bot-termos-master' to access your bot)\n"
+        echo -e "  ${CYAN}mv \"$PWD\" ~/bot-termos-master && cd ~/bot-termos-master && bash install.sh${NC}\n"
         exit 1
     fi
 
@@ -196,7 +196,7 @@ main() {
     run_with_spinner "Registering global 'hitori'" "$link_cmd"
 
     echo -e "\n  ${GREEN}✔${NC} ${BOLD}All dependencies have been installed successfully!${NC}"
-    echo -e "  ${BLUE}i${NC} ${DIM}You can now use the 'hitori' command from anywhere.${NC}\n"
+    echo -e "  ${BLUE}i${NC} ${DIM}You can now use the 'rvo' command from anywhere.${NC}\n"
 
     echo -e "  ${MAGENTA}✦${NC} ${BOLD}Launching first-time setup wizard...${NC}\n"
     node cli.js --setup
