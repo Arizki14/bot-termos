@@ -193,7 +193,7 @@ main() {
     else
         link_cmd="$SUDO_CMD npm link 2>/dev/null || true"
     fi
-    run_with_spinner "Registering global 'hitori'" "$link_cmd"
+    run_with_spinner "Registering global 'rvo'" "$link_cmd"
 
     echo -e "\n  ${GREEN}✔${NC} ${BOLD}All dependencies have been installed successfully!${NC}"
     echo -e "  ${BLUE}i${NC} ${DIM}You can now use the 'rvo' command from anywhere.${NC}\n"

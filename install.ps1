@@ -166,7 +166,7 @@ if (Test-Path "package.json") {
     Write-Host "  $YELLOW $WARN $NC $DIM No package.json found. Skipping project dependency installation. $NC"
 }
 
-Invoke-WithSpinner -Message "Registering global 'hitori'" -CommandStr "npm link"
+Invoke-WithSpinner -Message "Registering global 'rvo'" -CommandStr "npm link"
 
 Write-Host ""
 Write-Host "  $GREEN $TICK $NC $BOLD All dependencies have been installed successfully! $NC"
