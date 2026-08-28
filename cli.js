@@ -16,15 +16,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /*
  * ┌──────────────────────────────────────────────────────────────┐
- * │  Hitori CLI — Main Entry Point                               │
+ * │  rvo CLI — Main Entry Point                               │
  * │                                                              │
  * │  Usage:                                                      │
- * │    hitori              Open interactive menu                 │
- * │    hitori --setup      Run first-time setup wizard           │
- * │    hitori settings     Open settings menu directly           │
- * │    hitori start        Start the bot directly                │
- * │    hitori status       Show system health                    │
- * │    hitori report       Show reports                          │
+ * │    rvo              Open interactive menu                 │
+ * │    rvo --setup      Run first-time setup wizard           │
+ * │    rvo settings     Open settings menu directly           │
+ * │    rvo start        Start the bot directly                │
+ * │    rvo status       Show system health                    │
+ * │    rvo report       Show reports                          │
  * └──────────────────────────────────────────────────────────────┘
  */
 
@@ -146,7 +146,7 @@ async function startBot() {
 	}).start();
 
 	await new Promise((r) => setTimeout(r, 800));
-	spinner.succeed(theme.accent("Launching Hitori Bot..."));
+	spinner.succeed(theme.accent("Launching rvo Bot..."));
 	console.log(`  ${theme.dim("Press Ctrl+C to stop the bot and return to terminal.")}\n`);
 
 	return new Promise((resolve) => {
@@ -174,7 +174,7 @@ async function startBot() {
 
 function showHelp() {
 	showBanner();
-	console.log(`  ${theme.bold("Usage:")}  hitori ${theme.dim("[command]")}\n`);
+	console.log(`  ${theme.bold("Usage:")}  rvo ${theme.dim("[command]")}\n`);
 	console.log(`  ${theme.bold("Commands:")}`);
 	console.log(`    ${theme.accent("(none)".padEnd(16))} Open interactive menu`);
 	console.log(`    ${theme.accent("start".padEnd(16))} Start the bot directly`);
